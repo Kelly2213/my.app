@@ -2,12 +2,13 @@ body.signup-page {
   margin: 0;
   padding: 0;
   background-color: #eaf6ff;
-  background-image: radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
-                    radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
-                    radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
+  background-image:
+    radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
+    radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
+    radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,60 +16,59 @@ body.signup-page {
 }
 
 .container {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 20px;
-  text-align: center;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 350px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  text-align: center;
 }
 
 .illustration {
   width: 120px;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 24px;
-  color: #003d73;
-  margin-bottom: 20px;
+  color: #003366;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-form input {
+input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 10px;
-  background: #f1f9ff;
-  font-size: 14px;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
-form button {
+button {
   width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background-color: #4bb4f8;
+  padding: 0.8rem;
+  background-color: #3fa9f5;
   color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: bold;
-  font-size: 15px;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
-form button:hover {
-  background-color: #379de6;
+button:hover {
+  background-color: #0d8ce0;
 }
 
 .bottom-text {
-  margin-top: 15px;
-  font-size: 13px;
-  color: #555;
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .bottom-text a {
+  color: #003366;
   font-weight: bold;
-  color: #003d73;
   text-decoration: none;
 }
