@@ -1,7 +1,11 @@
 body.signup-page {
   margin: 0;
   padding: 0;
-  background: url('../assets/signup-background.png') no-repeat center center fixed;
+  background-color: #eaf6ff;
+  background-image: radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
+                    radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
+                    radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
+  background-repeat: no-repeat;
   background-size: cover;
   font-family: sans-serif;
   display: flex;
