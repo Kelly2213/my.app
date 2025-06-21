@@ -33,6 +33,9 @@ body.signup-page {
 
 .signup-title {
   color: #005BA4;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .signup-container h2 {
