@@ -14,66 +14,61 @@ body.signup-page {
   height: 100vh;
 }
 
-.signup-container {
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  padding: 32px;
-  width: 90%;
-  max-width: 360px;
+.container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
   text-align: center;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.signup-container img {
+.illustration {
   width: 120px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-.signup-container h1 {
+h1 {
   font-size: 24px;
-  color: #003366;
-  margin-bottom: 24px;
+  color: #003d73;
+  margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+form input {
   width: 100%;
   padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #005BA4;
-  color: white;
+  margin-bottom: 15px;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  margin-top: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #003f7a;
-}
-
-.login-link {
-  margin-top: 16px;
+  border-radius: 10px;
+  background: #f1f9ff;
   font-size: 14px;
 }
 
-.login-link a {
-  color: #005BA4;
-  text-decoration: none;
-  font-weight: 500;
+form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: #4bb4f8;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-.login-link a:hover {
-  text-decoration: underline;
+form button:hover {
+  background-color: #379de6;
+}
+
+.bottom-text {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #555;
+}
+
+.bottom-text a {
+  font-weight: bold;
+  color: #003d73;
+  text-decoration: none;
 }
