@@ -1,7 +1,8 @@
 body.signup-page {
   margin: 0;
   padding: 0;
-  background-color: #eaf6ff;
+  background: url('../assets/signup-background.png') no-repeat center center fixed;
+  background-size: cover;
   font-family: sans-serif;
   display: flex;
   justify-content: center;
