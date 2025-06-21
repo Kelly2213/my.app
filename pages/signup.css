@@ -25,9 +25,14 @@ body.signup-page {
 }
 
 .signup-image {
-  width: 150px;
-  display: block;
+  width: 60%;
+  max-width: 220px;
   margin: 0 auto 20px auto;
+  display: block;
+}
+
+.signup-title {
+  color: #005BA4;
 }
 
 .signup-container h2 {
