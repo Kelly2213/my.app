@@ -25,10 +25,10 @@ body.signup-page {
 }
 
 .signup-image {
-  width: 60%;
-  max-width: 220px;
-  margin: 0 auto 20px auto;
+  width: 120px; /* augmente pour agrandir */
+  height: auto;
   display: block;
+  margin: 0 auto 20px auto; /* centre et ajoute de l'espace */
 }
 
 .signup-title {
