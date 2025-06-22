@@ -33,11 +33,13 @@ body.signup-page {
 }
 
 .signup-image {
-  width: 200px;
-  margin: 30px auto;
   display: block;
+  margin: 30px auto;
   background: transparent !important;
   box-shadow: none !important;
+  width: 100%;
+  max-width: 220px; /* taille maximale sur ordi */
+  height: auto;
 }
 
 form {
@@ -79,6 +81,8 @@ form {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  max-width: 100%;
+  box-sizing: border-box;
   transition: background-color 0.3s ease;
 }
 
