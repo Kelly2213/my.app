@@ -53,5 +53,64 @@
 });
 </script>
 
+  <div id="message" style="margin-top: 10px;"></div>
+
+<script>
+  document.getElementById('signup-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const clientKey = document.getElementById('client-key').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const message = document.getElementById('message');
+
+    const apiUrl = 'https://api.sheety.co/2679273a0084b737d0eee7cc6e4cd88b/kodularApp/kodularApp';
+
+    try {
+      // Vérification de la clé client
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      const clientValide = data.kodularApp.some(client => client.codeClient === clientKey);
+
+      if (clientValide) {
+        message.innerHTML = "✅ Clé valide, création du compte en cours…";
+
+        // Ajout de l’utilisateur dans la feuille
+        const newUser = {
+          kodularApp: {
+            nom: name,
+            email: email,
+            motDePasse: password,
+            codeClient: clientKey
+          }
+        };
+
+        await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newUser)
+        });
+
+        message.innerHTML = "🎉 Compte créé avec succès ! Redirection…";
+
+        // Redirection après création
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1500);
+
+      } else {
+        message.innerHTML = "❌ Clé client invalide. Veuillez vérifier.";
+      }
+
+    } catch (error) {
+      console.error('Erreur avec l’API Sheety :', error);
+      message.innerHTML = "❌ Erreur technique. Réessayez plus tard.";
+    }
+  });
+</script>
+
 </body>
 </html>
