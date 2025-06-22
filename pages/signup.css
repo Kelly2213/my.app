@@ -29,7 +29,7 @@ form {
 }
 
 .signup-container input {
-   border: 1px solid #DDF3FF; /* couleur + minceur */
+   border: 1px solid #1065B5; /* couleur + minceur */
   background: white;
  border-radius: 10px;
   padding: 12px;
@@ -40,7 +40,7 @@ form {
 }
 
 .signup-image {
-  width: 300px;
+  width: 600px;
   margin-bottom: 30px; /* éloigne du titre */
   margin-top: 30px; /* descend depuis le haut */
   display: block;
@@ -124,10 +124,11 @@ form {
 }
 
 .signup-container input {
-  color: #CADEEA !important; /* pour forcer la couleur dans les navigateurs */
+  color: #1065B5 !important; /* pour forcer la couleur dans les navigateurs */
 }
 
 .signup-container input::placeholder {
   color: #CADEEA;
+  font-weight: 500;
   opacity: 1; /* corrige les navigateurs qui affichent le gris sinon */
 }
