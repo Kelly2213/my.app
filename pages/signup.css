@@ -37,7 +37,7 @@ body.signup-page {
   width: 250px;        /* largeur par défaut raisonnable */
   height: auto;
   display: block;
-  margin: 30px auto 20px auto;
+  margin: 10px auto 10px auto;
 }
 @media screen and (min-width: 768px) {
   .signup-image {
@@ -51,7 +51,8 @@ form {
   margin: 0 auto;
 }
 
-.signup-container input {
+.signup-container input 
+.signup-container button{
   border: 1px solid #DDF3FF;
   background: white;
   border-radius: 10px;
