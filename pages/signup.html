@@ -23,5 +23,35 @@
 
     <p class="login-link">Déjà un compte ? <a href="#">Se connecter</a></p>
   </div>
+
+  <script>
+  // Ton code JavaScript ici (validation de la clé client)
+</script>
+document.getElementById('signup-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const clientKey = document.getElementById('client-key').value.trim();
+  const message = document.getElementById('message');
+
+  const apiUrl = 'https://api.sheety.co/2679273a0084b737d0eee7cc6e4cd88b/kodularApp/kodularApp';
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    // Vérifie si une ligne contient le code client exact
+    const clientValide = data.kodularApp.some(client => client.codeClient === clientKey);
+
+    if (clientValide) {
+      message.innerHTML = "<span style='color: green;'>✅ Clé valide, compte en cours de création…</span>";
+      // Redirection ou enregistrement ici
+    } else {
+      message.innerHTML = "<span style='color: red;'>❌ Clé client invalide. Veuillez vérifier.</span>";
+    }
+  } catch (error) {
+    console.error('Erreur API Sheety :', error);
+    message.innerHTML = "<span style='color: red;'>❌ Erreur de connexion. Réessaie plus tard.</span>";
+  }
+});
 </body>
 </html>
