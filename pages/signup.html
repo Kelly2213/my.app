@@ -5,117 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Créer un compte</title>
   <link rel="stylesheet" href="signup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="signup-page">
+
   <div class="signup-container">
     <img src="../assets/signup-background.png" alt="Illustration" class="signup-image" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <h1 class="signup-title">Créer un compte</h1>
 
-     <h1 class="signup-title">Créer un compte</h1>
-
-<form>
-  <input type="text" placeholder="Nom complet" required />
-  <input type="email" placeholder="Courriel" required />
-  <input type="text" placeholder="Clé client" required />
-  <input type="password" placeholder="Mot de passe" required />
-  <button type="submit">Créer le compte</button>
-</form>
+    <form id="signup-form">
+      <input type="text" id="name" placeholder="Nom complet" required />
+      <input type="email" id="email" placeholder="Courriel" required />
+      <input type="text" id="client-key" placeholder="Clé client" required />
+      <input type="password" id="password" placeholder="Mot de passe" required />
+      <button type="submit">Créer le compte</button>
+      <div id="message" style="margin-top: 10px;"></div>
+    </form>
 
     <p class="login-link">Déjà un compte ? <a href="#">Se connecter</a></p>
   </div>
 
   <script>
- document.getElementById('signup-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
+    document.getElementById('signup-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
 
-  const clientKey = document.getElementById('client-key').value.trim();
-  const message = document.getElementById('message');
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const clientKey = document.getElementById('client-key').value.trim();
+      const message = document.getElementById('message');
 
-  const apiUrl = 'https://api.sheety.co/2679273a0084b737d0eee7cc6e4cd88b/kodularApp/kodularApp';
+      const apiUrl = 'https://api.sheety.co/2679273a0084b737d0eee7cc6e4cd88b/kodularApp/kodularApp';
 
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
+      try {
+        // Vérification de la clé client
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const clientValide = data.kodularApp.some(client => client.codeClient === clientKey);
 
-    // Vérifie si une ligne contient le code client exact
-    const clientValide = data.kodularApp.some(client => client.codeClient === clientKey);
+        if (clientValide) {
+          message.innerHTML = "✅ Clé valide, création du compte en cours…";
+          message.style.color = "green";
 
-    if (clientValide) {
-      message.innerHTML = "<span style='color: green;'>✅ Clé valide, compte en cours de création…</span>";
-      // Redirection ou enregistrement ici
-    } else {
-      message.innerHTML = "<span style='color: red;'>❌ Clé client invalide. Veuillez vérifier.</span>";
-    }
-  } catch (error) {
-    console.error('Erreur API Sheety :', error);
-    message.innerHTML = "<span style='color: red;'>❌ Erreur de connexion. Réessaie plus tard.</span>";
-  }
-});
-</script>
-<div id="message" style="margin-top: 10px;"></div>
+          // Création de l’utilisateur
+          const newUser = {
+            kodularApp: {
+              nom: name,
+              email: email,
+              motDePasse: password,
+              codeClient: clientKey
+            }
+          };
 
-<form id="signup-form">
-  <input type="text" id="client-key" placeholder="Clé client">
-  <button type="submit">Créer le compte</button>
-  <p id="message"></p>
-</form>
+          await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+          });
 
-<script>
-  document.getElementById('signup-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const clientKey = document.getElementById('client-key').value.trim();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-    const message = document.getElementById('message');
-
-    const apiUrl = 'https://api.sheety.co/2679273a0084b737d0eee7cc6e4cd88b/kodularApp/kodularApp';
-
-    try {
-      // Vérification de la clé client
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      const clientValide = data.kodularApp.some(client => client.codeClient === clientKey);
-
-      if (clientValide) {
-        message.innerHTML = "✅ Clé valide, création du compte en cours…";
-
-        // Ajout de l’utilisateur dans la feuille
-        const newUser = {
-          kodularApp: {
-            nom: name,
-            email: email,
-            motDePasse: password,
-            codeClient: clientKey
-          }
-        };
-
-        await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(newUser)
-        });
-
-        message.innerHTML = "🎉 Compte créé avec succès ! Redirection…";
-
-        // Redirection après création
-        setTimeout(() => {
-          window.location.href = "login.html";
-        }, 1500);
-
-      } else {
-        message.innerHTML = "❌ Clé client invalide. Veuillez vérifier.";
+          message.innerHTML = "🎉 Compte créé avec succès ! Redirection…";
+          setTimeout(() => {
+            window.location.href = "login.html";
+          }, 1500);
+        } else {
+          message.innerHTML = "❌ Clé client invalide. Veuillez vérifier.";
+          message.style.color = "red";
+        }
+      } catch (error) {
+        console.error('Erreur avec l’API Sheety :', error);
+        message.innerHTML = "❌ Erreur technique. Réessayez plus tard.";
+        message.style.color = "red";
       }
-
-    } catch (error) {
-      console.error('Erreur avec l’API Sheety :', error);
-      message.innerHTML = "❌ Erreur technique. Réessayez plus tard.";
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
