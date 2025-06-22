@@ -25,9 +25,7 @@
   </div>
 
   <script>
-  // Ton code JavaScript ici (validation de la clé client)
-</script>
-document.getElementById('signup-form').addEventListener('submit', async function(e) {
+ document.getElementById('signup-form').addEventListener('submit', async function(e) {
   e.preventDefault();
 
   const clientKey = document.getElementById('client-key').value.trim();
@@ -53,5 +51,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
     message.innerHTML = "<span style='color: red;'>❌ Erreur de connexion. Réessaie plus tard.</span>";
   }
 });
+</script>
+
 </body>
 </html>
