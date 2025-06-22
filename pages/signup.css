@@ -20,7 +20,7 @@ body.signup-page {
   border-radius: 0px;
   box-shadow: none;
   width: 90%;
-  max-width: 350px;
+  max-width: 280px;
   text-align: center;
 }
 
@@ -86,7 +86,7 @@ form {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  max-width: 100%;
+  max-width: 280px;
   box-sizing: border-box;
   transition: background-color 0.3s ease;
 }
