@@ -3,7 +3,19 @@
 body.annees-page {
   margin: 0;
   padding: 0;
+
+  /* Couleur de fond */
   background-color: #eaf6ff;
+
+  /* 3 cercles bleus en arrière-plan */
+  background-image:
+    radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
+    radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
+    radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
   font-family: 'Poppins', sans-serif;
 }
 
