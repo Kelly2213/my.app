@@ -41,6 +41,8 @@ form {
 
 .signup-image {
   width: 300px;
+  margin-bottom: 30px; /* éloigne du titre */
+  margin-top: 30px; /* descend depuis le haut */
   display: block;
   margin: 0 auto 20px auto;
   background: transparent; /* <-- par sécurité */
@@ -66,14 +68,14 @@ form {
   width: 100%;
   padding: 12px 15px;
   margin: 10px 0;
-  border: 2px solid #CADEEA;
+  border: 2px solid #1065B5;
   border-radius: 10px;
   font-size: 14px;
   box-sizing: border-box;
 }
 
 .signup-container input:focus {
-  border: 1px solid #65BBF5;
+  border: 2px solid #65BBF5;
   outline: none;
 }
 
@@ -112,11 +114,20 @@ form {
 
 .signup-container input {
   border: 1px solid #DDF3FF !important;
-  color: #CADEEA !important;
+  color: #1065B5 !important;
   box-shadow: none !important;
 }
 
 .signup-image {
   background: transparent !important;
   box-shadow: none !important;
+}
+
+.signup-container input {
+  color: #CADEEA !important; /* pour forcer la couleur dans les navigateurs */
+}
+
+.signup-container input::placeholder {
+  color: #CADEEA;
+  opacity: 1; /* corrige les navigateurs qui affichent le gris sinon */
 }
