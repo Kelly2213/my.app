@@ -1,9 +1,12 @@
 /* pages/annees.css */
 
-/* 1) Fond + cercles radiaux */
+/* 1) Fond + cercles radiaux + flex centré */
 body.annees-page {
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;    /* centre horizontalement le wrapper */
+  align-items: flex-start;    /* aligne en haut verticalement */
   background-color: #eaf6ff;
   background-image:
     radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
@@ -14,7 +17,17 @@ body.annees-page {
   font-family: 'Poppins', sans-serif;
 }
 
-/* 2) Titre centré */
+/* 2) Conteneur commun (wrapper implicite) */
+.annees-header,
+.annees-list {
+  width: 100%;
+  max-width: 300px;       /* fixe la largeur max du contenu */
+  margin: 0 auto;         /* centre le bloc */
+  box-sizing: border-box; /* inclut le padding dans la largeur */
+  padding: 0 12px;        /* padding latéral pour mobiles */
+}
+
+/* 3) Titre centré dans son conteneur */
 .annees-header h1 {
   text-align: center;
   font-size: 28px;
@@ -22,19 +35,15 @@ body.annees-page {
   margin: 20px 0;
 }
 
-/* 3) Liste : centrer + limiter la largeur + padding latéral */
+/* 4) Liste des années, colonne centrée */
 .annees-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 0 auto;          /* centre horizontalement */
-  padding: 0 12px 80px;    /* 16px de padding à gauche et droite */
-  width: 100%;
-  max-width: 300px;        /* ne dépasse jamais 400px */
-  box-sizing: border-box;  /* inclut le padding dans width */
+  padding-bottom: 80px;
 }
 
-/* 4) Items : pleine largeur du container + padding généreux */
+/* 5) Items pleine largeur du conteneur + padding généreux */
 .annee-item {
   display: flex;
   align-items: center;
@@ -42,7 +51,7 @@ body.annees-page {
   background: #fff;
   border-radius: 16px;
   padding: 20px 24px;
-  width: 100%;
+  width: 100%;            /* prend 100% du max-width défini plus haut */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-decoration: none;
   color: #005BA4;
@@ -53,7 +62,7 @@ body.annees-page {
   transform: translateY(-2px);
 }
 
-/* 5) Icone et texte plus grands */
+/* 6) Icônes + texte plus grands */
 .annee-item img {
   width: 32px;
   height: 32px;
@@ -62,7 +71,7 @@ body.annees-page {
   font-size: 20px;
 }
 
-/* 6) Masquer définitivement la barre de nav du bas */
+/* 7) On masque définitivement la barre de nav du bas */
 .bottom-nav {
   display: none !important;
 }
