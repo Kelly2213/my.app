@@ -17,6 +17,7 @@ body.signup-page {
 .signup-container {
   background-color: transparent;
   padding: 0px;
+  font-family: 'Poppins', sans-serif;
   border-radius: 0px;
   box-shadow: none;
   width: 90%;
