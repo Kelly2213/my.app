@@ -107,3 +107,15 @@ body.contact-page {
 .contact-info a:hover {
   text-decoration: underline;
 }
+
+/* pour les champs input */
+.contact-container input::placeholder {
+  color: #CADEEA;
+  opacity: 1; /* force toujours l’opacité maximale */
+}
+
+/* pour la textarea (le champ “Message”) */
+.contact-container textarea::placeholder {
+  color: #CADEEA;
+  opacity: 1;
+}
