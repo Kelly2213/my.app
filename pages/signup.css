@@ -39,6 +39,7 @@ form {
 }
 
 .signup-image {
+  background-color: transparent;
   width: 200px; /* augmente pour agrandir */
   height: auto;
   display: block;
@@ -46,14 +47,14 @@ form {
 }
 
 .signup-title {
-  color: #005BA4;
+  color: #0960B4;
   font-size: 26px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .signup-container h2 {
-  color: #1d4d91;
+  color: #94BCD3;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -71,7 +72,7 @@ form {
 }
 
 .signup-container button {
-  background-color: #40a9ff;
+  background-color: #64BBF6;
   color: white;
   border: none;
   padding: 12px;
@@ -94,7 +95,7 @@ form {
 }
 
 .signup-container a {
-  color: #1d4d91;
+  color: #0960B4;
   text-decoration: none;
   font-weight: bold;
 }
