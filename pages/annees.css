@@ -1,24 +1,20 @@
 /* pages/annees.css */
 
+/* 1) Fond + cercles radiaux */
 body.annees-page {
   margin: 0;
   padding: 0;
-
-  /* Couleur de fond */
   background-color: #eaf6ff;
-
-  /* 3 cercles bleus en arrière-plan */
   background-image:
     radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
     radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
     radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
-
   background-repeat: no-repeat;
   background-size: cover;
-
   font-family: 'Poppins', sans-serif;
 }
 
+/* 2) Titre centré */
 .annees-header h1 {
   text-align: center;
   font-size: 28px;
@@ -26,58 +22,47 @@ body.annees-page {
   margin: 20px 0;
 }
 
-/* 1) Plus d’espace latéral autour des items */
+/* 3) Liste : centrer + limiter la largeur + padding latéral */
 .annees-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
-  /* On passe de 12px à 24px de marge intérieure */
-  padding: 0 24px 80px;
+  margin: 0 auto;          /* centre horizontalement */
+  padding: 0 16px 80px;    /* 16px de padding à gauche et droite */
+  width: 100%;
+  max-width: 400px;        /* ne dépasse jamais 400px */
+  box-sizing: border-box;  /* inclut le padding dans width */
 }
 
-/* 2) Cases plus larges et plus hautes */
+/* 4) Items : pleine largeur du container + padding généreux */
 .annee-item {
   display: flex;
   align-items: center;
   gap: 12px;
   background: #fff;
   border-radius: 16px;
-  /* On augmente le padding pour agrandir la case */
   padding: 20px 24px;
-  /* On laisse 100% de la largeur disponible jusqu’à 400px max */
   width: 100%;
-  max-width: 400px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-decoration: none;
   color: #005BA4;
   font-weight: 600;
   transition: transform 0.2s ease;
 }
-
-/* 3) Plus grosse typo pour mieux remplir */
-.annee-item span {
-  font-size: 20px; /* passe de 16px par exemple à 20px */
+.annee-item:hover {
+  transform: translateY(-2px);
 }
 
-/* 4) Icône un peu plus grosse (optionnel) */
+/* 5) Icone et texte plus grands */
 .annee-item img {
   width: 32px;
   height: 32px;
 }
-
-.bottom-nav {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  height: 60px;
-  background: #fff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  box-shadow: 0 -1px 6px rgba(0,0,0,0.1);
+.annee-item span {
+  font-size: 20px;
 }
 
-.bottom-nav a img {
-  width: 24px;
-  height: 24px;
+/* 6) Masquer définitivement la barre de nav du bas */
+.bottom-nav {
+  display: none !important;
 }
