@@ -56,13 +56,18 @@ form {
   background: white;
   border-radius: 10px;
   padding: 12px 15px;
-  width: 330px;
-  max-width: 100%;
   margin-bottom: 15px;
   font-size: 14px;
   color: #1065B5;
   box-shadow: none;
   transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.signup-container input,
+.signup-container button {
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
 }
 
 .signup-container input:focus {
