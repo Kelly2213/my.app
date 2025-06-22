@@ -1,0 +1,109 @@
+/* pages/contact.css */
+
+/* 1) Fond + cercles radiaux */
+body.contact-page {
+  margin: 0;
+  padding: 0;
+  background-color: #eaf6ff;
+  background-image:
+    radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
+    radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
+    radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* 2) Container centré */
+.contact-container {
+  width: 90%;
+  max-width: 320px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* 3) Illustration/logo */
+.contact-image {
+  width: 180px;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+/* 4) Titre */
+.contact-title {
+  font-size: 26px;
+  color: #005ba4;
+  margin-bottom: 24px;
+}
+
+/* 5) Champ unique (icon + input/textarea) */
+.contact-field {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 6) Icônes */
+.contact-field .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  opacity: 0.6;
+}
+
+/* 7) Inputs & textarea */
+.contact-field input,
+.contact-field textarea {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: #1065b5;
+  font-weight: 500;
+}
+
+/* 8) Textarea hauteur */
+.contact-field textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* 9) Bouton envoyer */
+.contact-button {
+  width: 100%;
+  background: #005ba4;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-button:hover {
+  background: #004a8d;
+}
+
+/* 10) Pied de page (coordonnées) */
+.contact-info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #005ba4;
+}
+.contact-info a {
+  color: #005ba4;
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
