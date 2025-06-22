@@ -56,11 +56,14 @@ body.signup-page {
     max-width: 350px;
       }
 }
-form {
-  padding: 20px;
-  max-width: 400px;
+.signup-container form {
+  padding: 0;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .signup-container input {
