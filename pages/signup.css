@@ -104,3 +104,14 @@ form {
 .signup-container a:hover {
   text-decoration: underline;
 }
+
+.signup-container input {
+  border: 1px solid #DDF3FF !important;
+  color: #CADEEA !important;
+  box-shadow: none !important;
+}
+
+.signup-image {
+  background: transparent !important;
+  box-shadow: none !important;
+}
