@@ -66,10 +66,15 @@ form {
   width: 100%;
   padding: 12px 15px;
   margin: 10px 0;
-  border: 2px solid #005BA4;
+  border: 2px solid #CADEEA;
   border-radius: 10px;
   font-size: 14px;
   box-sizing: border-box;
+}
+
+.signup-container input:focus {
+  border: 1px solid #65BBF5;
+  outline: none;
 }
 
 .signup-container button {
