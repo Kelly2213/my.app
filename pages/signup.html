@@ -52,8 +52,13 @@
   }
 });
 </script>
+<div id="message" style="margin-top: 10px;"></div>
 
-  <div id="message" style="margin-top: 10px;"></div>
+<form id="signup-form">
+  <input type="text" id="client-key" placeholder="Clé client">
+  <button type="submit">Créer le compte</button>
+  <p id="message"></p>
+</form>
 
 <script>
   document.getElementById('signup-form').addEventListener('submit', async function(e) {
