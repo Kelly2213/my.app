@@ -7,17 +7,16 @@ body.signup-page {
                     radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .signup-container {
   background-color: transparent;
   padding: 0px;
-  font-family: 'Poppins', sans-serif;
   border-radius: 0px;
   box-shadow: none;
   width: 90%;
@@ -25,63 +24,48 @@ body.signup-page {
   text-align: center;
 }
 
+.signup-title {
+  color: #0960B4;
+  font-weight: 600;
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.signup-image {
+  width: 200px;
+  margin: 30px auto;
+  display: block;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
 form {
   padding: 20px;
 }
 
 .signup-container input {
-   border: 1px solid #1065B5; /* couleur + minceur */
+  border: 1px solid #DDF3FF;
   background: white;
- border-radius: 10px;
-  padding: 12px;
+  border-radius: 10px;
+  padding: 12px 15px;
   width: 100%;
   margin-bottom: 15px;
   font-size: 14px;
-  color: #CADEEA; /* couleur du texte dans les champs */
-}
-
-.signup-image {
-  width: 600px;
-  margin: 30px auto;       /* top/bottom = 30px, centré horizontalement */
-  background: transparent; /* s'assurer qu'il n’y a pas de fond blanc */
-  box-shadow: none;        /* supprime toute ombre */
-  display: block;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
-.signup-title {
-  color: #0960B4;
-  font-weight: 600;
-  font-size: 26px;
-  margin-bottom: 20px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.signup-container h2 {
-  color: #94BCD3;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.signup-container input[type="text"],
-.signup-container input[type="email"],
-.signup-container input[type="password"] {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0;
-  border: 2px solid #1065B5;
-  border-radius: 10px;
-  font-size: 14px;
-  box-sizing: border-box;
+  color: #1065B5;
+  box-shadow: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .signup-container input:focus {
   border: 2px solid #65BBF5;
   outline: none;
+}
+
+.signup-container input::placeholder {
+  color: #CADEEA;
+  font-weight: 600;
+  opacity: 1;
 }
 
 .signup-container button {
@@ -115,26 +99,4 @@ body {
 
 .signup-container a:hover {
   text-decoration: underline;
-}
-
-.signup-container input {
-  border: 1px solid #DDF3FF !important;
-  color: #1065B5 !important;
-  box-shadow: none !important;
-}
-
-.signup-image {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.signup-container input {
-  color: #1065B5 !important; /* pour forcer la couleur dans les navigateurs */
-  transition: border 0.2s ease, box-shadow 0.2s ease;
-}
-
-.signup-container input::placeholder {
-  color: #CADEEA;
-  font-weight: 600;
-  opacity: 1; /* corrige les navigateurs qui affichent le gris sinon */
 }
