@@ -28,9 +28,9 @@ body.annees-page {
   flex-direction: column;
   gap: 16px;
   margin: 0 auto;          /* centre horizontalement */
-  padding: 0 16px 80px;    /* 16px de padding à gauche et droite */
+  padding: 0 12px 80px;    /* 16px de padding à gauche et droite */
   width: 100%;
-  max-width: 400px;        /* ne dépasse jamais 400px */
+  max-width: 300px;        /* ne dépasse jamais 400px */
   box-sizing: border-box;  /* inclut le padding dans width */
 }
 
