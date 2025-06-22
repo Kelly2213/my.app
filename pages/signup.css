@@ -34,12 +34,16 @@ body.signup-page {
 
 .signup-image {
   max-width: 100%;
-  width: 300px;        /* largeur par défaut raisonnable */
+  width: 250px;        /* largeur par défaut raisonnable */
   height: auto;
   display: block;
   margin: 30px auto 20px auto;
 }
-
+@media screen and (min-width: 768px) {
+  .signup-image {
+    max-width: 350px;
+      }
+}
 form {
   padding: 20px;
   max-width: 400px;
