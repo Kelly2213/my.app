@@ -31,23 +31,23 @@
 
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value.trim();
       const clientKey = document.getElementById('client-key').value.trim();
+      const password = document.getElementById('password').value.trim();
       const message = document.getElementById('message');
 
       const apiUrl = 'https://api.sheety.co/2679273a0084b737d0eee7cc6e4cd88b/kodularApp/kodularApp';
 
       try {
-        // Vérification de la clé client
+        // Vérifie si la clé client est valide
         const response = await fetch(apiUrl);
         const data = await response.json();
+
         const clientValide = data.kodularApp.some(client => client.codeClient === clientKey);
 
         if (clientValide) {
-          message.innerHTML = "✅ Clé valide, création du compte en cours…";
-          message.style.color = "green";
+          message.innerHTML = "<span style='color: green;'>✅ Clé valide, création du compte…</span>";
 
-          // Création de l’utilisateur
+          // Envoie les données à Sheety
           const newUser = {
             kodularApp: {
               nom: name,
@@ -59,24 +59,23 @@
 
           await fetch(apiUrl, {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newUser)
           });
 
-          message.innerHTML = "🎉 Compte créé avec succès ! Redirection…";
+          message.innerHTML = "<span style='color: green;'>🎉 Compte créé avec succès !</span>";
+
+          // Redirection après 2 secondes
           setTimeout(() => {
             window.location.href = "login.html";
-          }, 1500);
+          }, 2000);
+
         } else {
-          message.innerHTML = "❌ Clé client invalide. Veuillez vérifier.";
-          message.style.color = "red";
+          message.innerHTML = "<span style='color: red;'>❌ Clé client invalide. Veuillez vérifier.</span>";
         }
       } catch (error) {
-        console.error('Erreur avec l’API Sheety :', error);
-        message.innerHTML = "❌ Erreur technique. Réessayez plus tard.";
-        message.style.color = "red";
+        console.error('Erreur API Sheety :', error);
+        message.innerHTML = "<span style='color: red;'>❌ Erreur de connexion. Réessayez plus tard.</span>";
       }
     });
   </script>
