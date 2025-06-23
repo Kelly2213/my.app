@@ -5,40 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu</title>
   <link rel="stylesheet" href="menu.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
-<body>
+<body class="menu-page">
   <div class="menu-container">
+    <!-- Bouton hamburger (juste visuel) -->
     <button class="menu-toggle">☰</button>
+
+    <!-- Titre centré -->
     <h1 class="menu-title">Menu</h1>
 
-    <div class="menu-item">
-      <img src="assets/book.svg" alt="Année scolaire">
+    <!-- Chaque entrée est un lien (<a>) vers sa page -->
+    <a href="pages/annees.html" class="menu-item">
+      <img src="assets/book.svg" alt="Année scolaire" />
       <span>Année scolaire</span>
-    </div>
+    </a>
 
-    <div class="menu-item">
-      <img src="assets/clock.svg" alt="Banque d’heures">
+    <a href="pages/banque.html" class="menu-item">
+      <img src="assets/clock.svg" alt="Banque d’heures" />
       <span>Banque d’heures</span>
-    </div>
+    </a>
 
-    <div class="menu-item">
-    +  <a href="pages/contact.html">
-+    <img src="assets/mail.svg" alt="Contactez-nous" />
-+    <span>Contactez-nous</span>
-+  </a>
-    </div>
+    <a href="pages/contact.html" class="menu-item">
+      <img src="assets/mail.svg" alt="Contactez-nous" />
+      <span>Contactez-nous</span>
+    </a>
 
-    <div class="menu-item">
-      <img src="assets/heart.svg" alt="Gestion du stress">
+    <a href="pages/stress.html" class="menu-item">
+      <img src="assets/heart.svg" alt="Gestion du stress" />
       <span>Gestion du stress</span>
-    </div>
+    </a>
 
-    <!-- juste après l’onglet “Gestion du stress” -->
-<div class="menu-item">
-  <img src="assets/shopping-bag.svg" alt="Boutique" />
-  <span>Boutique</span>
-</div>
+    <a href="pages/boutique.html" class="menu-item">
+      <img src="assets/shopping-bag.svg" alt="Boutique" />
+      <span>Boutique</span>
+    </a>
   </div>
 </body>
 </html>
