@@ -1,10 +1,10 @@
-/* désactive scroll horizontal */
+/* Empêche le scroll horizontal */
 html, body {
   overflow-x: hidden;
   touch-action: pan-y;
 }
 
-/* 1) page container + radials */
+/* 1) Fond + cercles radiaux */
 body.annees-page {
   margin: 0;
   padding: 0;
@@ -18,39 +18,34 @@ body.annees-page {
   font-family: 'Poppins', sans-serif;
 }
 
-/* 2) header plein écran */
+/* 2) HEADER pleine largeur */
 .annees-header {
-  width: 100vw;                /* 100% écran */
-  background-color: #dbefff;   /* fond bleu clair */
-  padding: 24px 0 16px;
-  box-sizing: border-box;
-  text-align: center;
+  position: relative;
+  width: 100vw;           /* prend tout l’écran */
+  overflow: hidden;
 }
 
-/* 2a) les 2 icônes aux extrémités */
-.header-icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 300px;
-  margin: 0 auto 12px;
-  padding: 0 12px;
-}
-.header-icons img {
-  width: 32px;
-  height: 32px;
-  opacity: 0.8;
+/* 2a) Illustration du header */
+.header-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-/* 2b) titre centré */
+/* 2b) Titre centré sur la bannière */
 .annees-header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0;
+  color: #005BA4;
   font-size: 28px;
   font-weight: 600;
-  color: #005BA4;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-/* 3) wrapper centré pour la liste */
+/* 3) Wrapper centré pour la liste */
 .annees-wrapper {
   max-width: 300px;
   margin: 0 auto;
@@ -58,14 +53,14 @@ body.annees-page {
   box-sizing: border-box;
 }
 
-/* 4) liste en colonne */
+/* 4) Mise en colonne des items */
 .annees-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* 5) chaque item en “carte” */
+/* 5) Styles des « cartes » années */
 .annee-item {
   display: flex;
   align-items: center;
@@ -84,7 +79,7 @@ body.annees-page {
   transform: translateY(-2px);
 }
 
-/* 6) icône sur fond bleu */
+/* 6) Icône sur fond bleu clair */
 .annee-icon {
   background-color: #dbefff;
   border-radius: 8px;
@@ -98,12 +93,12 @@ body.annees-page {
   height: 24px;
 }
 
-/* 7) texte plus gros */
+/* 7) Texte de l’item plus gros */
 .annee-item span {
   font-size: 20px;
 }
 
-/* 8) masque nav bottom si jamais */
+/* 8) Masque la nav bottom si elle existe */
 .bottom-nav {
   display: none !important;
 }
