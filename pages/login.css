@@ -1,0 +1,127 @@
+/* Empêche le scroll horizontal et lock le pan vertical */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  touch-action: pan-y;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 1) Fond + cercles radiaux + wrapper centré */
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #eaf6ff;
+  background-image:
+    radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
+    radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
+    radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 2) Container général */
+.login-container {
+  width: 100%;
+  max-width: 350px;
+  padding: 0 16px 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* 3) Illustration */
+.login-image {
+  display: block;
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  margin: 40px auto 20px;
+  background: transparent;
+}
+
+/* 4) Titre */
+.form-title {
+  margin: 0 0 12px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #0960B4;
+}
+
+/* 5) Formulaire vertical */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 6) Champ + icône */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #DDF3FF;
+  border-radius: 10px;
+  padding: 12px;
+  transition: border 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* 6a) Icône */
+.input-group .icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+/* 6b) Input texte */
+.input-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: #1065B5;
+}
+.input-group input::placeholder {
+  color: #CADEEA;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* 6c) Focus */
+.input-group:focus-within {
+  border: 2px solid #65BBF5;
+}
+
+/* 7) Bouton “Se connecter” */
+.submit-button {
+  background-color: #64BBF6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.submit-button:hover {
+  background-color: #3392dd;
+}
+
+/* 8) Liens sous le bouton */
+.form-links {
+  margin-top: 8px;
+  font-size: 14px;
+}
+.form-links a {
+  color: #0960B4;
+  text-decoration: none;
+  font-weight: 500;
+}
+.form-links a:hover {
+  text-decoration: underline;
+}
