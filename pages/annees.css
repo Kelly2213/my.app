@@ -17,7 +17,7 @@ body.annees-page {
   font-family: 'Poppins', sans-serif;
 }
 
-/* 2) Conteneur commun (wrapper implicite) */
+/* 2) Wrapper implicite pour header + liste */
 .annees-header,
 .annees-list {
   width: 100%;
@@ -27,12 +27,36 @@ body.annees-page {
   padding: 0 12px;        /* padding latéral pour mobiles */
 }
 
-/* 3) Titre centré dans son conteneur */
+/* 3) Header bleu clair avec icônes de chaque côté */
+.annees-header {
+  background-color: #dbefff;
+  border-radius: 0 0 16px 16px;
+  padding: 24px 0 16px;    /* espace vertical interne */
+  text-align: center;      /* centre le titre */
+  position: relative;
+}
+
+/* 3a) Bloc icônes, aligné à gauche et à droite */
+.header-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto 12px;
+  padding: 0 12px;
+}
+.header-icons img {
+  width: 32px;
+  height: 32px;
+  opacity: 0.8;
+}
+
+/* 3b) Titre centré */
 .annees-header h1 {
-  text-align: center;
+  margin: 0;
   font-size: 28px;
+  font-weight: 600;
   color: #005BA4;
-  margin: 20px 0;
 }
 
 /* 4) Liste des années, colonne centrée */
