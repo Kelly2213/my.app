@@ -10,7 +10,6 @@ html, body {
 /* ===== Fond + cercles + centrer le wrapper ===== */
 body.annees-page {
   background-color: white;
-
 }
 
 /* ===== Wrapper central ===== */
@@ -28,7 +27,6 @@ body.annees-page {
   box-sizing: border-box;
   margin-bottom: 24px;
 }
-
 /*  -- L’image plein-largeur du wrapper -- */
 .annees-header .header-img {
   display: block;
@@ -36,11 +34,10 @@ body.annees-page {
   height: auto;
   border-radius: 0 0 16px 16px;
 }
-
 /*  -- Titre superposé centré sous l’image -- */
 .annees-header .annees-title {
   position: absolute;
-  bottom: 16px;        /* décalez-le du bas de l’image */
+  bottom: 16px;            /* décale du bas de l’image */
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
@@ -48,9 +45,9 @@ body.annees-page {
   font-weight: 600;
   color: #005BA4;
   text-align: center;
-  white-space: nowrap; /* garde le titre sur une ligne */
-  padding: 0 8px;      /* pour éviter que le texte ne chevauche les bords */
-  background: rgba(255,255,255,0.7); /* léger fond pour lisibilité */
+  white-space: nowrap;     /* garde le titre sur une ligne */
+  padding: 0 8px;          /* évite le chevauchement bord/image */
+  background: rgba(255,255,255,0.7);
   border-radius: 8px;
 }
 
@@ -98,7 +95,7 @@ body.annees-page {
 }
 
 /* ===== TEXTE ===== */
-.annee-item span:last-child {
+.annee-item .annee-label {
   font-size: 18px;
 }
 
