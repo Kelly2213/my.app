@@ -1,54 +1,78 @@
-body {
+/* pages/menu.css */
+
+/* 1) Fond + cercles radiaux comme les autres pages */
+body.menu-page {
   margin: 0;
   padding: 0;
   background-color: #eaf6ff;
+  background-image:
+    radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
+    radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
+    radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
 }
 
+/* 2) Container centré */
 .menu-container {
+  width: 90%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 40px 0;
   text-align: center;
-  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
 }
 
+/* 3) Bouton hamburger */
 .menu-toggle {
   font-size: 28px;
   background: none;
   border: none;
-  position: absolute;
-  top: 20px;
-  left: 20px;
   color: #005BA4;
   cursor: pointer;
+  /* plus de absolute, il reste dans le flux */
+  margin-bottom: 16px;
 }
 
+/* 4) Titre centré */
 .menu-title {
   font-size: 28px;
   font-weight: 700;
   color: #005BA4;
-  margin: 40px 0 30px 0;
+  margin-bottom: 30px;
 }
 
+/* 5) Items (maintenant <a>) */
 .menu-item {
   display: flex;
   align-items: center;
   background: #fff;
   border-radius: 18px;
-  padding: 14px 20px;
-  margin: 12px auto;
-  max-width: 320px;
+  padding: 16px 20px;
+  margin: 0 auto 16px;
+  width: 100%;
+  text-decoration: none;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  font-weight: 600;
-  color: #005BA4;
-  gap: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .menu-item:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .menu-item img {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.menu-item span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #005BA4;
 }
