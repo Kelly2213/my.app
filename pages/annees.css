@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+  touch-action: pan-y;  /* conserve seulement le pan vertical sur mobile */
+}
 /* pages/annees.css */
 
 /* 1) Fond + cercles radiaux + flex centré */
