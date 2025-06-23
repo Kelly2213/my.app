@@ -1,16 +1,13 @@
+/* désactive scroll horizontal */
 html, body {
   overflow-x: hidden;
-  touch-action: pan-y;  /* conserve seulement le pan vertical sur mobile */
+  touch-action: pan-y;
 }
-/* pages/annees.css */
 
-/* 1) Fond + cercles radiaux + flex centré */
+/* 1) page container + radials */
 body.annees-page {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;    /* centre horizontalement le wrapper */
-  align-items: flex-start;    /* aligne en haut verticalement */
   background-color: #eaf6ff;
   background-image:
     radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
@@ -21,26 +18,16 @@ body.annees-page {
   font-family: 'Poppins', sans-serif;
 }
 
-/* 2) Wrapper implicite pour header + liste */
-.annees-header,
-.annees-list {
-  width: 100%;
-  max-width: 300px;       /* fixe la largeur max du contenu */
-  margin: 0 auto;         /* centre le bloc */
-  box-sizing: border-box; /* inclut le padding dans la largeur */
-  padding: 0 12px;        /* padding latéral pour mobiles */
-}
-
-/* 3) Header bleu clair avec icônes de chaque côté */
+/* 2) header plein écran */
 .annees-header {
-  background-color: #dbefff;
-  border-radius: 0 0 16px 16px;
-  padding: 24px 0 16px;    /* espace vertical interne */
-  text-align: center;      /* centre le titre */
-  position: relative;
+  width: 100vw;                /* 100% écran */
+  background-color: #dbefff;   /* fond bleu clair */
+  padding: 24px 0 16px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* 3a) Bloc icônes, aligné à gauche et à droite */
+/* 2a) les 2 icônes aux extrémités */
 .header-icons {
   display: flex;
   justify-content: space-between;
@@ -55,7 +42,7 @@ body.annees-page {
   opacity: 0.8;
 }
 
-/* 3b) Titre centré */
+/* 2b) titre centré */
 .annees-header h1 {
   margin: 0;
   font-size: 28px;
@@ -63,15 +50,22 @@ body.annees-page {
   color: #005BA4;
 }
 
-/* 4) Liste des années, colonne centrée */
+/* 3) wrapper centré pour la liste */
+.annees-wrapper {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 12px 80px;
+  box-sizing: border-box;
+}
+
+/* 4) liste en colonne */
 .annees-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-bottom: 80px;
 }
 
-/* 5) Items pleine largeur du conteneur + padding généreux */
+/* 5) chaque item en “carte” */
 .annee-item {
   display: flex;
   align-items: center;
@@ -79,7 +73,7 @@ body.annees-page {
   background: #fff;
   border-radius: 16px;
   padding: 20px 24px;
-  width: 100%;            /* prend 100% du max-width défini plus haut */
+  width: 100%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-decoration: none;
   color: #005BA4;
@@ -90,16 +84,26 @@ body.annees-page {
   transform: translateY(-2px);
 }
 
-/* 6) Icônes + texte plus grands */
-.annee-item img {
-  width: 32px;
-  height: 32px;
+/* 6) icône sur fond bleu */
+.annee-icon {
+  background-color: #dbefff;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.annee-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* 7) texte plus gros */
 .annee-item span {
   font-size: 20px;
 }
 
-/* 7) On masque définitivement la barre de nav du bas */
+/* 8) masque nav bottom si jamais */
 .bottom-nav {
   display: none !important;
 }
