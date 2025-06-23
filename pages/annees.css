@@ -1,131 +1,118 @@
-/* Empêche le scroll horizontal sur mobile */
+/* ===== Empêche le scroll horizontal sur mobile ===== */
 html, body {
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
   touch-action: pan-y;
+  margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
 }
 
+/* ===== Fond + cercles + centrer le wrapper ===== */
 body.annees-page {
-  background-color: #FFFFF;
-}
+  background-color: #eaf6ff;
+  background-image:
+    radial-gradient(circle at 20% 20%, #dbefff 60px, transparent 61px),
+    radial-gradient(circle at 80% 30%, #dbefff 80px, transparent 81px),
+    radial-gradient(circle at 60% 80%, #dbefff 100px, transparent 101px);
+  background-repeat: no-repeat;
+  background-size: cover;
 
-/* Conteneur central pour limiter la largeur */
-.annees-container {
-  max-width: 360px;      /* taille max du contenu */
-  margin: 0 auto;        /* centre horizontalement */
-  padding: 0 16px;       /* padding latéral sur mobile */
-  box-sizing: border-box;
-}
-
-/* 3) Header bleu clair avec icônes de chaque côté, titre en dessous */
-.annees-header {
-  background-color: #dbefff;
-  border-radius: 0 0 16px 16px;
-  padding: 24px 12px;      /* espace pour le header */
-  box-sizing: border-box;
-  /*    ↙ transforme en flex-col    */
   display: flex;
-  flex-direction: column;
-  align-items: center;     /* centre les enfants (icônes + titre) */
-  gap: 12px;               /* espace entre icônes et titre */
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
-/* 3a) Ligne d’icônes pleine largeur du header */
-.header-icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* ===== Wrapper central ===== */
+.annees-wrapper {
   width: 100%;
-  max-width: 300px;        /* même largeur que le titre / liste */
-}
-.header-icons img {
-  width: 32px;
-  height: 32px;
-  opacity: 0.8;
+  max-width: 360px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* 3b) Titre centré sur SA ligne, sous les icônes */
-.annees-header h1 {
-  margin: 0;               /* on gère l’espacement via le gap du flex */
+/* ===== HEADER ===== */
+.annees-header {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+
+/*  -- L’image plein-largeur du wrapper -- */
+.annees-header .header-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 16px 16px;
+}
+
+/*  -- Titre superposé centré sous l’image -- */
+.annees-header .annees-title {
+  position: absolute;
+  bottom: 16px;        /* décalez-le du bas de l’image */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
   font-size: 28px;
   font-weight: 600;
   color: #005BA4;
   text-align: center;
-}
-}
-
-/* image full-width et responsive */
-.annees-header-img {
-  display: block;
-  width: 100%;
-  height: auto;
+  white-space: nowrap; /* garde le titre sur une ligne */
+  padding: 0 8px;      /* pour éviter que le texte ne chevauche les bords */
+  background: rgba(255,255,255,0.7); /* léger fond pour lisibilité */
+  border-radius: 8px;
 }
 
-/* titre en overlay centré */
-.annees-header-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  color: #005BA4;
-  font-size: 26px;
-  font-weight: 600;
-  text-align: center;
-  padding: 0 8px;   /* pour ne pas couper sur mobiles étroits */
-}
-
-/* ========== LISTE ========== */
+/* ===== LISTE ===== */
 .annees-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 24px 0 80px 0;
+  padding: 0 16px 80px;
+  box-sizing: border-box;
 }
 
-/* chaque item = bloc blanc arrondi */
+/* ===== CARTES ===== */
 .annee-item {
   display: flex;
   align-items: center;
-  gap: 16px;
-  background: #ffffff;
+  gap: 12px;
+  background: #fff;
   border-radius: 16px;
   padding: 16px 20px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-decoration: none;
   color: #005BA4;
-  font-size: 18px;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s;
 }
 .annee-item:hover {
   transform: translateY(-2px);
 }
 
-/* fond bleu clair uniquement derrière l’icône */
-.icon-bg {
-  background: #dbefff;
-  border-radius: 8px;
-  padding: 8px;
+/* ===== FOND BLEU DERRIÈRE L’ICÔNE ===== */
+.annee-item .icon-bg {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #eaf6ff;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
 }
-
-/* taille des icônes */
-.icon-bg img {
+.annee-item .icon-bg img {
   width: 24px;
   height: 24px;
 }
 
-/* label de l’année */
-.annee-label {
-  flex: 1;
+/* ===== TEXTE ===== */
+.annee-item span:last-child {
+  font-size: 18px;
 }
 
-/* masque toute nav bottom si présente */
+/* ===== Masquer toute barre de nav résiduelle ===== */
 .bottom-nav {
   display: none !important;
 }
