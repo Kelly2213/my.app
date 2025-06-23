@@ -19,12 +19,41 @@ body.annees-page {
   box-sizing: border-box;
 }
 
-/* ========== HEADER ========== */
+/* 3) Header bleu clair avec icônes de chaque côté, titre en dessous */
 .annees-header {
-  position: relative;
-  margin-top: 24px;
-  border-radius: 16px;
-  overflow: hidden;
+  background-color: #dbefff;
+  border-radius: 0 0 16px 16px;
+  padding: 24px 12px;      /* espace pour le header */
+  box-sizing: border-box;
+  /*    ↙ transforme en flex-col    */
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centre les enfants (icônes + titre) */
+  gap: 12px;               /* espace entre icônes et titre */
+}
+
+/* 3a) Ligne d’icônes pleine largeur du header */
+.header-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;        /* même largeur que le titre / liste */
+}
+.header-icons img {
+  width: 32px;
+  height: 32px;
+  opacity: 0.8;
+}
+
+/* 3b) Titre centré sur SA ligne, sous les icônes */
+.annees-header h1 {
+  margin: 0;               /* on gère l’espacement via le gap du flex */
+  font-size: 28px;
+  font-weight: 600;
+  color: #005BA4;
+  text-align: center;
+}
 }
 
 /* image full-width et responsive */
